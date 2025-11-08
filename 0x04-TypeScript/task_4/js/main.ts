@@ -14,7 +14,7 @@ const java = new Java();
 const react = new React();
 
 // Create and export the teacher
-const cTeacher: Subjects.Teacher = {
+cTeacher: Subjects.Teacher = {
   firstName: 'John',
   lastName: 'Doe',
   experienceTeachingC: 10,
