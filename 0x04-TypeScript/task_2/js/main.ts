@@ -19,7 +19,7 @@ interface TeacherInterface {
 // ---------------------------------------------
 // Director class implementing DirectorInterface
 // ---------------------------------------------
-class Director implements DirectorInterface {
+export class Director implements DirectorInterface {
   workFromHome(): string {
     return 'Working from home';
   }
@@ -36,7 +36,7 @@ class Director implements DirectorInterface {
 // ---------------------------------------------
 // Teacher class implementing TeacherInterface
 // ---------------------------------------------
-class Teacher implements TeacherInterface {
+export class Teacher implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
   }
@@ -53,7 +53,7 @@ class Teacher implements TeacherInterface {
 // ---------------------------------------------
 // createEmployee function
 // ---------------------------------------------
-function createEmployee(salary: number | string): Director | Teacher {
+export function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number' && salary < 500) {
     return new Teacher();
   } else {
@@ -66,12 +66,12 @@ function createEmployee(salary: number | string): Director | Teacher {
 // ---------------------------------------------
 
 // Type predicate to check if employee is Director
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
 // Function to execute the correct work method
-function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
@@ -84,3 +84,4 @@ function executeWork(employee: Director | Teacher): string {
 // ---------------------------------------------
 console.log(executeWork(createEmployee(200)));   // Getting to work
 console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
+
