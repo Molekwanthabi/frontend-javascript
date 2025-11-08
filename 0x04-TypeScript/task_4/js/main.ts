@@ -9,9 +9,9 @@ import { Subjects as JavaSubjects } from './subjects/Java';
 import { Subjects as ReactSubjects } from './subjects/React';
 
 // Create and export the subject instances
-const cpp = new Subjects.Cpp();
-const java = new JavaSubjects.Java();
-const react = new ReactSubjects.React();
+const cpp = new Cpp();
+const java = new Java();
+const react = new React();
 
 // Create and export the teacher
 export const cTeacher: Subjects.Teacher = {
